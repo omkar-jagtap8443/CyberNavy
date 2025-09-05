@@ -1,0 +1,15 @@
+.user-dashboard {
+  padding: 20px;
+  margin: 50px;
+  border-radius: 20px;
+  background: #161b22;
+  border: 1px solid white;
+  color: white;
+  text-align: center;
+  box-shadow: 0px 5px 15px rgba(87, 135, 167, 0.4);
+}
+
+.user-dashboard h2 {
+  color: #58a6ff;
+  margin-bottom: 15px;
+}

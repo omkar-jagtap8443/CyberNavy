@@ -1,0 +1,15 @@
+.admin-dashboard {
+  padding: 20px;
+  margin: 50px;
+  border-radius: 20px;
+  background: #161b22;
+  border: 1px solid white;
+  color: white;
+  text-align: center;
+  box-shadow: 0px 5px 15px rgba(87, 135, 167, 0.4);
+}
+
+.admin-dashboard h2 {
+  color: #f87171; /* Red for admin */
+  margin-bottom: 15px;
+}
