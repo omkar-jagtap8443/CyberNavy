@@ -11,6 +11,12 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.0.0",
+    "@google-cloud/vision": "^5.3.3",
+    "@tensorflow/tfjs-converter": "^4.22.0",
+    "@tensorflow/tfjs-core": "^4.22.0",
+    "gridfs-stream": "^1.1.1",
+    "multer": "^2.0.2",
+    "nsfwjs": "^4.2.1",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router-dom": "^7.8.2"
