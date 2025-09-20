@@ -26,47 +26,20 @@ function Dashboard() {
 
     try {
       setLoading(true);
+      const formData = new FormData();
+      formData.append("file", file);
 
-      // Check for the specific image "test.jpg" and return an "unsafe" result
-      if (file.name === 'test.jpg') {
-        setResult({
-          warning: true,
-          message: "⚠️ Warning: A weapon was detected in this content.",
-        });
-        setLoading(false);
-        setShowModal(true);
-        return;
-      }
-
-      // Fallback to nsfwjs for other images
-      const model = await nsfwjs.load();
-      const image = new Image();
-      image.src = URL.createObjectURL(file);
-      await new Promise((resolve) => {
-        image.onload = () => resolve();
+      // Change the URL if your backend is hosted elsewhere
+      const response = await fetch("http://localhost:5000/api/upload/scan", {
+        method: "POST",
+        body: formData,
       });
+      const data = await response.json();
 
-      const predictions = await model.classify(image);
-      const unsafe = predictions.some(
-        (p) =>
-          (p.className === "Porn" ||
-            p.className === "Sexy" ||
-            p.className === "Hentai") &&
-          p.probability > 0.7
-      );
-
-      if (unsafe) {
-        setResult({
-          warning: true,
-          message: "⚠️ Warning: This content may be inappropriate.",
-        });
-      } else {
-        setResult({
-          warning: false,
-          message: "✅ Your content is clean and safe to upload on any platform.",
-        });
-      }
-
+      setResult({
+        warning: data.status === "unsafe",
+        message: data.message || "No message returned."
+      });
       setShowModal(true);
       setLoading(false);
     } catch (err) {
