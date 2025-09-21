@@ -6,7 +6,6 @@ function Navbar() {
   const navigate = useNavigate();
   const [currentUser, setCurrentUser] = useState(null);
 
-  // refresh ke baad bhi user ka naam dikhana
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
     if (storedUser) {
@@ -18,7 +17,22 @@ function Navbar() {
     localStorage.removeItem("user");
     localStorage.removeItem("pass");
     setCurrentUser(null);
-    navigate("/"); // front page pe bhej do
+    navigate("/");
+  };
+  
+  const handleScrollToAbout = () => {
+    const aboutSection = document.getElementById('about-section');
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  // ✅ New function to scroll to the contact section
+  const handleScrollToContact = () => {
+    const contactSection = document.getElementById('contact-section');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
@@ -44,8 +58,9 @@ function Navbar() {
           </span>
         )}
 
-        <span className="About">About</span>
-        <span className="contact">Contact</span>
+        <span className="About" onClick={handleScrollToAbout}>About</span>
+        {/* ✅ Add the onClick handler to the Contact span */}
+        <span className="contact" onClick={handleScrollToContact}>Contact</span>
       </div>
     </div>
   );

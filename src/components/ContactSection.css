@@ -1,0 +1,145 @@
+.contact-section-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Cosmic background from your image */
+  background: url('src/assets/Earth3.jpg') no-repeat center center fixed; /* Replace with your actual space background image URL */
+  background-size: cover;
+  color: white;
+  font-family: 'Poppins', sans-serif; /* Ensure Poppins is imported in your main CSS or index.html */
+  position: relative;
+  overflow: hidden;
+  padding: 50px 20px; /* Add some padding for smaller screens */
+}
+
+/* Optional: Add an overlay to make text more readable on the background */
+.contact-section-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* Dark overlay */
+  z-index: 1;
+}
+
+.contact-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px; /* Max width for your content */
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  gap: 40px; /* Space between columns */
+}
+
+@media (min-width: 992px) {
+  .contact-content-wrapper {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+.contact-form-column {
+  background-color: #1a1a2e; /* Darker background for the form area */
+  border-radius: 25px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  flex: 1;
+  max-width: 550px;
+  margin-bottom: 20px;
+  border: 1px solid #3e4859;
+}
+
+.get-in-touch-title {
+  font-size: 1rem;
+  color: #a0aec0;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.contact-main-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.contact-form .form-group {
+  margin-bottom: 20px;
+}
+
+.contact-form .form-label {
+  display: block;
+  font-size: 0.9rem;
+  color: #8b949e;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.contact-form .form-input,
+.contact-form .form-textarea {
+  width: 100%;
+  padding: 12px 15px;
+  background: #0d1117;
+  border: 1px solid #3e4859;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.contact-form .form-input:focus,
+.contact-form .form-textarea:focus {
+  border-color: #58a6ff;
+  box-shadow: 0 0 8px rgba(88, 166, 255, 0.6);
+  transform: scale(1.01);
+}
+
+.contact-form .form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.submit-button {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, #000102, #3b82f6);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+}
+
+.submit-button:hover {
+  background: linear-gradient(135deg, #000000, #3b82f6);
+  transform: translateY(-3px);
+
+}
+
+.contact-image-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+}
+
+.contact-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(88, 166, 255, 0.6);
+}

@@ -220,6 +220,35 @@ body {
   box-shadow: 0px 5px 15px rgba(59, 130, 246, 0.4);
 }
 
+.content-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  margin-top: 30px;
+  flex-wrap: wrap; /* responsive ke liye */
+}
+
+.dashboard-row{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.row-section{
+  margin-left: 1%;
+  margin-top: 3%;
+  width: 35%;
+}
+.centre-section{
+  margin-left: 30px;
+   width: 35%;
+  margin-top: 6%;
+}
+.last-section{
+  margin-left: 3%;
+  margin-top: 3%;
+  width: 35%;
+}
 
 
 

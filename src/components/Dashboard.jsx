@@ -1,12 +1,21 @@
 import React, { useState } from "react";
 import * as nsfwjs from "nsfwjs";
 import "./Dashboard.css";
+import FeatureCard from './FeatureCard';
+import URLManager from "./URLManager";
+import ContactSection from './ContactSection'; 
+import FileFeatureCard from './FileFeatureCard';
+
+
+
+
 
 function Dashboard() {
   const [file, setFile] = useState(null);
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
+
 
   // Drag & drop handling
   const handleDrop = (e) => {
@@ -49,7 +58,9 @@ function Dashboard() {
     }
   };
 
+
   return (
+    
     <div className="dashboard">
       <div className="title">Security Intelligence Dashboard</div>
       <div className="subtitle">Real-time monitoring and threat detection</div>
@@ -137,7 +148,48 @@ function Dashboard() {
         >
           {loading ? "Analyzing..." : "Analyze Content"}
         </button>
+        
+       
+      </div >
+      <div className="dashboard-row">
+       
+        <div className="row-section">
+                 {/* Feature Card Component */}
+          <FeatureCard /> 
+         
+         
+          </div>
+          <div className="centre-section">
+             <URLManager/>
+           
+          </div>
+          <div className="last-section">
+              <FileFeatureCard /> 
+       
+          </div>
+        
+        </div>
+          
+         <div id="about-section" style={{ padding: '50px', marginTop: '50px', backgroundColor: '#161b22', borderRadius: '20px', border: '1px dashed #3e4859' }}>
+        <h1>About CyberNavy</h1>
+       <p>CyberNavy is a cybersecurity project focused on providing real-time solutions for detecting and mitigating online threats. It empowers users to monitor suspicious activities, analyze files or links, and take proactive measures to secure their systems against malware, phishing, and other cyber risks.</p>
+
+<p>The platform features a modern and responsive web interface with a Node.js backend, ensuring fast performance and smooth user experience. It also supports file and URL scanning, reporting, and visualization of threat data, making it a valuable tool for both individuals and organizations concerned about digital safety.</p>
+
+<p>This project is licensed under the MIT License, encouraging collaboration and open-source contributions.</p>
+
+<p>CyberNavy is built using React, Node.js, Express, MongoDB, and Tailwind CSS, with a focus on scalability, security, and clean design principles.</p>
+       
+        
+    
       </div>
+       <ContactSection />
+    
+     
+       
+       
+    
+  
 
       {/* 🔥 Modal Popup */}
       {showModal && result && (
@@ -162,6 +214,8 @@ function Dashboard() {
           </div>
         </div>
       )}
+       
+
     </div>
   );
 }
